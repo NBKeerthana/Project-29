@@ -2,6 +2,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Constraint = Matter.Constraint;
 
 var ground, stand1, stand2
 var block1,block2,block3,block4,block5,block6,block7,block8,block9,block10,block11,block12,block13,block14,block15,block16
@@ -61,14 +62,12 @@ function setup() {
 	block31 = new Block(980,268,30,30)
 	block32 = new Block(950,238,30,30)
 
-	polygon = Bodies.circle(50,200,20)
+	polygon = Bodies.circle(150,350,20)
 	imageMode(CENTER)
 	image(polygon_img,polygon.position.x,polygon.position.y,48,48)
 	World.add(world,polygon)
 
-	slingshot = new SlingShot(this.polygon,{x:100,y:200})
-
-
+	slingshot = new SlingShot(this.polygon,{x:150,y:350})
 
 
 	Engine.run(engine);
