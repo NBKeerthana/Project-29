@@ -63,8 +63,6 @@ function setup() {
 	block32 = new Block(950,238,30,30)
 
 	polygon = Bodies.circle(150,350,20)
-	imageMode(CENTER)
-	image(polygon_img,polygon.position.x,polygon.position.y,48,48)
 	World.add(world,polygon)
 
 	slingshot = new SlingShot(this.polygon,{x:150,y:350})
@@ -117,7 +115,10 @@ function draw() {
   block32.display()
 
   slingshot.display()
+
   polygon.display()
+  imageMode(CENTER)
+  image(polygon_img,polygon.position.x,polygon.position.y,48,48)
   
   drawSprites();
  
