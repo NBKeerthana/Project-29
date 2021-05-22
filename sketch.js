@@ -116,7 +116,6 @@ function draw() {
 
   slingshot.display()
 
-  polygon.display()
   imageMode(CENTER)
   image(polygon_img,polygon.position.x,polygon.position.y,48,48)
   
@@ -124,5 +123,10 @@ function draw() {
  
 }
 
+function mouseDragged(){
+    Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+}
 
-
+function mouseReleased(){
+    slingshot.fly();
+}
