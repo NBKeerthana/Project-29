@@ -62,7 +62,12 @@ function setup() {
 	block31 = new Block(980,268,30,30)
 	block32 = new Block(950,238,30,30)
 
-	polygon = Bodies.circle(150,350,20)
+	var polygon_options = {
+		'restitution': 0.8,
+		'friction': 1.0,
+		'density':1.0
+	}
+	polygon = Bodies.circle(150,350,20,polygon_options)
 	World.add(world,polygon)
 
 	slingshot = new SlingShot(this.polygon,{x:150,y:350})
@@ -124,7 +129,7 @@ function draw() {
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
+    Matter.Body.setPosition(polygon, {x: mouseX , y: mouseY});
 }
 
 function mouseReleased(){
